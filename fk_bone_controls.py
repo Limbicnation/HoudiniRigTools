@@ -57,3 +57,55 @@ def ToggleBonesVisibility():
             bone_node.parm('tdisplay').set(0)
         else:
             bone_node.parm('tdisplay').set(1)
+
+
+def KeyAll():
+    # Create a keyframe on our Conrol Nodes
+
+    fkControl = hou.pwd().evalParm('fknNodes').split()
+    for fk in fkControl:
+        fk = hou.node(fk)
+        # Create our first keyframe object
+        k = hou.keyframe()
+        k.setSlopeAuto(True)
+
+        # Keyframe the rotation parameters
+
+        # Check if the x channel is Locked
+        if not fk.parm('rx').isLocked():
+            k.setValue(fk.evalparm('rx'))
+            # Set the actual keyframe
+            fk.parm('rx').setKeyframe()
+             
+        # Check if the y channel is Locked
+        if not fk.parm('ry').isLocked():
+            k.setValue(fk.evalparm('ry'))
+            # Set the actual keyframe
+            fk.parm('ry').setKeyframe()
+
+         # Check if the z channel is Locked
+        if not fk.parm('rz').isLocked():
+            k.setValue(fk.evalparm('rz'))
+            # Set the actual keyframe
+            fk.parm('rz').setKeyframe()
+        
+        # Keyframe the translation parameters
+
+        # Check if the y channel is Locked
+        if not fk.parm('tx').isLocked():
+            k.setValue(fk.evalparm('tx'))
+            # Set the actual keyframe
+            fk.parm('ry').setKeyframe()
+
+                    # Check if the y channel is Locked
+        if not fk.parm('ty').isLocked():
+            k.setValue(fk.evalparm('ty'))
+            # Set the actual keyframe
+            fk.parm('ty').setKeyframe()
+
+
+        # Check if the y channel is Locked
+        if not fk.parm('tz').isLocked():
+            k.setValue(fk.evalparm('tz'))
+            # Set the actual keyframe
+            fk.parm('tz').setKeyframe()
