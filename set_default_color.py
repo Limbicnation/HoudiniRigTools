@@ -8,15 +8,30 @@ def reset_node_color():
         print("Error: Node not found!")
         return
 
-    # Get the parm tuple for the color parameter
-    color_parm = hou.parmTuple('/obj/PoseNet_Control_Rig_HDA/PoseNet_Control_Rig/Controls/left_arm')
+    # Define a dictionary of parameter names and their corresponding RGB values
+    param_dict = {
+        # left arm colors
+        'left_arm': (34.0, 13.0, 0.0),
+        'left_shoulder': (0.0, 1.0, 0.0),
+        'left_Upper_arm': (0.0, 0.0, 1.0),
+        'left_elbow': (1.0, 1.0, 0.0),
+        'left_wrist': (1.0, 0.0, 1.0),
 
-    if not color_parm:
-        print("Error: Color parameter not found on node!")
-        return
+        # right arm colors
+        'right_arm': (1.0, 0.0, 0.0),
+        'right_shoulder': (0.0, 1.0, 0.0),
+        'right_upper_arm': (0.0, 0.0, 1.0),
+        'right_elbow': (1.0, 1.0, 0.0),
+        'right_wrist': (1.0, 0.0, 1.0)
+    }
 
-    # Reset the color of the node to the default color
-    color_parm.set((1.0, 0.0, 0.0))
+    # Loop through the parameter dictionary and reset the color of each parameter to its corresponding RGB value
+    for param_name, rgb_values in param_dict.items():
+        color_parm = hou.parmTuple(f'/obj/PoseNet_Control_Rig_HDA/PoseNet_Control_Rig/Controls/{param_name}')
+        if not color_parm:
+            print(f"Error: Color parameter not found for {param_name}")
+            continue
+        color_parm.set(rgb_values)
 
 # Define the callback function for the button
 def reset_node_color_callback():
