@@ -10,14 +10,12 @@ def reset_node_color():
 
     # Define a dictionary of parameter names and their corresponding RGB values
     param_dict = {
-        # left arm colors
         'left_arm': (34.0, 13.0, 0.0),
         'left_shoulder': (0.0, 1.0, 0.0),
         'left_Upper_arm': (0.0, 0.0, 1.0),
         'left_elbow': (1.0, 1.0, 0.0),
         'left_wrist': (1.0, 0.0, 1.0),
-
-        # right arm colors
+        
         'right_arm': (1.0, 0.0, 0.0),
         'right_shoulder': (0.0, 1.0, 0.0),
         'right_upper_arm': (0.0, 0.0, 1.0),
