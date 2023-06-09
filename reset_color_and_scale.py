@@ -10,11 +10,14 @@ def reset_node_color():
 
     # Define a dictionary of parameter names and their corresponding RGB values
     param_dict = {
-        'left_arm': (34.0, 13.0, 0.0),
+        'left_arm': (60.0, 20.0, 0.0),
         'left_shoulder': (0.0, 1.0, 0.0),
         'left_Upper_arm': (0.0, 0.0, 1.0),
         'left_elbow': (1.0, 1.0, 0.0),
         'left_wrist': (1.0, 0.0, 1.0),
+        
+        'Left_Upper_Body': (0.0, 0.6, 0,6),
+        
         
         'right_arm': (1.0, 0.0, 0.0),
         'right_shoulder': (0.0, 1.0, 0.0),
@@ -36,6 +39,6 @@ def reset_node_color_callback():
     reset_node_color()
 
 # Add the button to the shelf
-shelf = hou.ui.curDesktop().shelf()
-button = shelf.addTool('reset_nodes', tool_type=hou.shelf.toolType.Python, icon='BUTTONS_reload', script='reset_node_color_callback()')
-button.setHelp('Reset Node Colors')
+#shelf = hou.ui.curDesktop().shelf()
+#button = shelf.addTool('reset_nodes', tool_type=hou.shelf.toolType.Python, icon='BUTTONS_reload', script='reset_node_color_callback()')
+#button.setHelp('Reset Node Colors')
