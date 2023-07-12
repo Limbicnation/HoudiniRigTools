@@ -12,6 +12,7 @@ def reset_node_color():
     # Define a dictionary of parameter names and their corresponding normalized RGB values
     # Use the Label parameter name
     param_dict = {
+        # Left arm
         'left_arm_color': (0.43529411764705883, 0.13725490196078433, 0.0),
         'left_shoulder_color': (0.23529411764705882, 0.7372549019607844, 0.0),
         'left_upper_arm_color': (0.2823529411764706, 0.43529411764705883, 0.0),
@@ -21,11 +22,13 @@ def reset_node_color():
 
         'Left_Upper_Body': (0.0, 0.6, 0, 6),
 
-        'right_arm': (1.0, 0.0, 0.0),
-        'right_shoulder': (0.0, 1.0, 0.0),
-        'right_upper_arm': (0.0, 0.0, 1.0),
-        'right_elbow': (1.0, 1.0, 0.0),
-        'right_wrist': (1.0, 0.0, 1.0)
+        # Right arm
+        'right_arm_color': (0.439, 0.0039, 0.0039),
+        'right_shoulder_color': (0.733, 0.482, 0.0),
+        'right_upper_arm_color': (0.431, 0.282, 0.0),
+        'right_elbow_color': (0.733, 0.733, 0.0),
+        'right_lower_arm_color': (0.435, 0.435, 0.0),
+        'right_wrist_color': (0.0, 0.674, 0.690),
     }
 
     # Loop through the parameter dictionary and reset the color of each parameter to its corresponding RGB value
